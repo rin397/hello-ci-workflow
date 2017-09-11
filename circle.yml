@@ -11,10 +11,8 @@ dependencies:
     - npm install -g bower
   override:
     - npm install
-    - bower install
   cache_directories:
     - "node_modules"
-    - "bower_components"
 
 test:
   override:
