@@ -1,11 +1,20 @@
 # circle.yml
 machine:
   node:
-    version: 0.10
+    version: 0.12.0
 
 dependencies:
+  pre:
+    - export PATH=/usr/local/phantomjs-2.0.0/bin:$PATH
+    - npm config set spin false
+    - npm install -g npm@^2
+    - npm install -g bower
   override:
     - npm install
+    - bower install
+  cache_directories:
+    - "node_modules"
+    - "bower_components"
 
 test:
   override:
